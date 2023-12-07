@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import "./styles/OrderStyles.css";
 
-const Burger = (props) => {
+const Pizza = (props) => {
   const [isEditing, setIsEditing] = useState(false);
   const [buttonValue, setButtonValue] = useState(0);
 
@@ -49,7 +49,7 @@ const Burger = (props) => {
   return (
     <div className="container">
       <div className="order-background-color order-list">
-        <h3 className="mx-3 my-2">Burger</h3>
+        <h3 className="mx-3 my-2">Pizza</h3>
         <button
           type="button"
           className="ml-5 order-button btn btn-danger"
@@ -87,4 +87,4 @@ const Burger = (props) => {
   );
 };
 
-export default Burger;
+export default Pizza;

@@ -4,6 +4,10 @@ import "./styles/AppStyles.css";
 
 import Menu from "./Menu";
 import Burger from "./Burger";
+import Pizza from "./Pizza";
+import Fries from "./Fries";
+import YourOrder from "./YourOrder";
+import Total from "./Total";
 
 const App = () => {
   const [isSwitchOn, setIsSwitchOn] = useState(false);
@@ -46,7 +50,11 @@ const App = () => {
             </label>
           </div>
           <Menu isSwitchOn={isSwitchOn} />
-          <Burger isSwitchOn={isSwitchOn} />
+          <YourOrder isSwitchOn={isSwitchOn} />
+          <Burger />
+          <Pizza />
+          <Fries  />
+          <Total />
         </div>
     </>
   );
