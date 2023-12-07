@@ -1,0 +1,32 @@
+
+.order-title.light {
+    color: white;
+}
+
+.order-title.dark {
+    color: black;
+}
+
+.order-list {
+    border: 1px solid rgb(200,200,200);
+    padding: 10px;
+}
+
+.order-list {
+    border-radius: 0.5rem; /* Adjust the radius to your preference */
+    overflow: hidden; /* Ensures the inner elements don't overflow the rounded corners */
+  }
+  
+  .order-list th,
+  .order-list td {
+    border-radius: 0; /* Resets border-radius for table cells, if necessary */
+  }
+  
+  /* Bootstrap 5 uses .table>:not(:last-child) th to set borders. This style removes the bottom border of the thead element, so it does not overlap the rounded corners of the table. */
+  .order-list thead th {
+    border-bottom: 0;
+  }
+
+.background-div {
+    /* z-index: -1; */
+}

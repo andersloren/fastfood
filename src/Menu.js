@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "./styles/MenuStyles.css";
 
@@ -28,14 +28,19 @@ const Menu = (props) => {
 
   return (
     <div className="container mt-5">
-      <div className={`container menu-title ${props.theme === 'theme-light' ? 'dark' : 'light'}`}>Fast Food Menu</div>
+      <h2
+        className={`menu-title ${
+          props.isSwitchOn ? "light" : "dark"
+        }`}
+      >
+        Fast Food Menu
+      </h2>
       <div className="row">
         {menu.map((dish, index) => (
           <div className="card col-md-3 m-2 p-3" key={index}>
             <img
               className="card-img-top"
               src="./fast-food-dish-picture.png"
-              alt="picture of fast food"
             />
             <h5 className="card-title my-1">{dish.title}</h5>
             <div className="card-description my-1">{dish.description}</div>

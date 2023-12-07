@@ -1,6 +1,7 @@
 .App {
     min-height: 100vh;
     min-width: 100vh;
+    position: relative;
 }
 
 .App.theme-dark {
@@ -8,7 +9,7 @@
 }
 
 .App.theme-light {
-    background-color: rgb(255, 255, 255)
+    background-color: white;
 }
 
 .switch-custom {
@@ -31,7 +32,7 @@
 }
 
 .switch-custom.background-light {
-    background-color: rgb(255, 255, 255)
+    background-color: white;
 }
 
 
@@ -40,7 +41,7 @@
 }
 
 .switch-custom.text-light {
-    color: rgb(255, 255, 255)
+    color: white;
 }
 
 .form-switch .form-check-input {

@@ -3,43 +3,55 @@ import React, { useState } from "react";
 import "./styles/AppStyles.css";
 
 import Menu from "./Menu";
+import Order from "./Order";
 
 const App = () => {
-  const [theme, setTheme] = useState("theme-light");
   const [isSwitchOn, setIsSwitchOn] = useState(false);
+  const [theme, setTheme] = useState("theme-light");
   const [backgroundColor, setSwitchColor] = useState("background-light");
   const [textColor, setTextColor] = useState("text-dark");
 
   const handleSwitchChange = () => {
+    
     setIsSwitchOn(!isSwitchOn);
-    if (theme === "theme-light") {
+    if (isSwitchOn == false) {
       setTheme("theme-dark");
       setTextColor("text-light");
-      setSwitchColor("background-dark")
+      setSwitchColor("background-dark");
     } else {
       setTheme("theme-light");
       setTextColor("text-dark");
-      setSwitchColor("background-light")
+      setSwitchColor("background-light");
     }
   };
 
   return (
-    <div className={`App ${theme}`}>
-      <div className={`form-check form-switch slider switch-custom ${backgroundColor}`}>
-        <input
-          className="form-check-input"
-          type="checkbox"
-          role="switch"
-          id="flexSwitchCheckDefault"
-          checked={isSwitchOn}
-          onChange={handleSwitchChange}
-        />
-        <label className={`form-check-label switch-custom ${textColor}`} for="flexSwitchCheckDefault">
-          {theme == "theme-light" ? "Bright Mode" : "Dark Mode"}
-        </label>
+    <>
+    <div className='App'>
+      <div className={`background-div App ${theme}`}>
+        <div
+          className={`form-check form-switch slider switch-custom ${backgroundColor}`}
+        >
+          <input
+            className="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="flexSwitchCheckDefault"
+            checked={isSwitchOn}
+            onChange={handleSwitchChange}
+          />
+          <label
+            className={`form-check-label switch-custom ${textColor}`}
+            htmlFor="flexSwitchCheckDefault"
+          >
+            {theme == "theme-light" ? "Bright Mode" : "Dark Mode"}
+          </label>
+        </div>
+        <Menu isSwitchOn={isSwitchOn} />
+        <Order isSwitchOn={isSwitchOn} />
       </div>
-      <Menu theme={theme}/>
-    </div>
+      </div>
+    </>
   );
 };
 

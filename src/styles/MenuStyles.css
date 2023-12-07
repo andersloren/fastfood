@@ -1,11 +1,10 @@
 
 .menu-title {
     text-align: center;
-    font-size: 30px;
 }
 
 .menu-title.light {
-    color: rgb(255, 255, 255);
+    color: white;
 }
 
 .menu-title.dark {
