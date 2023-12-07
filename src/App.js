@@ -34,14 +34,17 @@ const App = () => {
 
   const toggleBurgerVisibility = () => {
     setIsVisibleBurger(!isVisibleBurger);
+    setBurgerQuantity(0);
   };
 
   const togglePizzaVisibility = () => {
     setIsVisiblePizza(!isVisiblePizza);
+    setPizzaQuantity(0);
   };
 
   const toggleFriesVisibility = () => {
     setIsVisibleFries(!isVisibleFries);
+    setFriesQuantity(0);
   };
 
   const [burgerQuantity, setBurgerQuantity] = useState(0);

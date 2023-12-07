@@ -11,7 +11,7 @@ const Total = (props) => {
             <b>Total</b>
           </h3>
         </div>
-        <div>SEK {props.totalPrice.toFixed(2)}</div>
+        <div><b>SEK {props.totalPrice.toFixed(2)}</b></div>
       </div>
     </div>
   );
