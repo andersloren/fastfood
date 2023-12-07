@@ -4,10 +4,6 @@ import "./styles/MenuStyles.css";
 
 const Menu = (props) => {
 
-  const burgerPrice = 79.99;
-  const pizzaPrice = 99.99;
-  const friesPrice = 59.99;
-
   return (
     <div className="container mt-5">
       <h2 className={`menu-title ${props.isSwitchOn ? "light" : "dark"}`}>
@@ -19,7 +15,7 @@ const Menu = (props) => {
         <div className="card-description my-1">
           A delicious burger with all the fixings
         </div>
-        <div className="card-price my-1">SEK {burgerPrice}</div>
+        <div className="card-price my-1">SEK {props.burgerPrice}</div>
         <button type="button" className="btn btn-dark" onClick={props.toggleBurgerVisibility}>
           {props.isVisibleBurger ? "Remove from order" : "Add to order"}
         </button>
@@ -30,7 +26,7 @@ const Menu = (props) => {
         <div className="card-description my-1">
           Classic pizza with your favorite toppings
         </div>
-        <div className="card-price my-1">SEK {pizzaPrice}</div>
+        <div className="card-price my-1">SEK {props.pizzaPrice}</div>
         <button type="button" className="btn btn-dark" onClick={props.togglePizzaVisibility}>
         {props.isVisiblePizza ? "Remove from order" : "Add to order"}
         </button>
@@ -41,7 +37,7 @@ const Menu = (props) => {
         <div className="card-description my-1">
           Crispy golden fries served hot and fresh
         </div>
-        <div className="card-price my-1">SEK {friesPrice}</div>
+        <div className="card-price my-1">SEK {props.friesPrice}</div>
         <button type="button" className="btn btn-dark" onClick={props.toggleFriesVisibility}>
         {props.isVisibleFries ? "Remove from order" : "Add to order"}
         </button>

@@ -19,6 +19,9 @@
 .order-list {
     border-radius: 0.5rem; /* Adjust the radius to your preference */
     overflow: hidden; /* Ensures the inner elements don't overflow the rounded corners */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
   
   .order-list th,
@@ -35,7 +38,7 @@
     display: inline-block;
   } */
 
-  .order-button {
+.order-button {
     width: 50px;
     text-align: center;
   }

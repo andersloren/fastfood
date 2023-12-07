@@ -1,10 +1,17 @@
 import React from "react";
 
-const Total = () => {
+import "./styles/OrderStyles.css";
+
+const Total = (props) => {
   return (
     <div className="container">
       <div className="order-background-color order-list">
-        <h3 className="mx-3 my-2"><b>Total</b></h3>
+        <div>
+          <h3 className="mx-3 my-2">
+            <b>Total</b>
+          </h3>
+        </div>
+        <div>SEK {props.totalPrice.toFixed(2)}</div>
       </div>
     </div>
   );
