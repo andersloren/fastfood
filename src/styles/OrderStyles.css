@@ -1,3 +1,7 @@
+.order-background-color {
+    background-color: white;
+}
+
 
 .order-title.light {
     color: white;
@@ -27,6 +31,11 @@
     border-bottom: 0;
   }
 
-.background-div {
-    /* z-index: -1; */
-}
+  .order-row {
+    display: inline-block;
+  }
+
+  .order-button {
+    width: 50px;
+    text-align: center;
+  }

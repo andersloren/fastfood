@@ -28,20 +28,13 @@ const Menu = (props) => {
 
   return (
     <div className="container mt-5">
-      <h2
-        className={`menu-title ${
-          props.isSwitchOn ? "light" : "dark"
-        }`}
-      >
+      <h2 className={`menu-title ${props.isSwitchOn ? "light" : "dark"}`}>
         Fast Food Menu
       </h2>
       <div className="row">
         {menu.map((dish, index) => (
           <div className="card col-md-3 m-2 p-3" key={index}>
-            <img
-              className="card-img-top"
-              src="./fast-food-dish-picture.png"
-            />
+            <img className="card-img-top" src="./fast-food-dish-picture.png" />
             <h5 className="card-title my-1">{dish.title}</h5>
             <div className="card-description my-1">{dish.description}</div>
             <div className="card-price my-1">SEK {dish.price}</div>

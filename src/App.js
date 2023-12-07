@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./styles/AppStyles.css";
 
 import Menu from "./Menu";
-import Order from "./Order";
+import Burger from "./Burger";
 
 const App = () => {
   const [isSwitchOn, setIsSwitchOn] = useState(false);
@@ -12,9 +12,8 @@ const App = () => {
   const [textColor, setTextColor] = useState("text-dark");
 
   const handleSwitchChange = () => {
-    
     setIsSwitchOn(!isSwitchOn);
-    if (isSwitchOn == false) {
+    if (!isSwitchOn) {
       setTheme("theme-dark");
       setTextColor("text-light");
       setSwitchColor("background-dark");
@@ -27,30 +26,28 @@ const App = () => {
 
   return (
     <>
-    <div className='App'>
-      <div className={`background-div App ${theme}`}>
-        <div
-          className={`form-check form-switch slider switch-custom ${backgroundColor}`}
-        >
-          <input
-            className="form-check-input"
-            type="checkbox"
-            role="switch"
-            id="flexSwitchCheckDefault"
-            checked={isSwitchOn}
-            onChange={handleSwitchChange}
-          />
-          <label
-            className={`form-check-label switch-custom ${textColor}`}
-            htmlFor="flexSwitchCheckDefault"
+        <div className={`App ${theme}`}>
+          <div
+            className={`form-check form-switch slider switch-custom ${backgroundColor}`}
           >
-            {theme == "theme-light" ? "Bright Mode" : "Dark Mode"}
-          </label>
+            <input
+              className="form-check-input"
+              type="checkbox"
+              role="switch"
+              id="flexSwitchCheckDefault"
+              checked={isSwitchOn}
+              onChange={handleSwitchChange}
+            />
+            <label
+              className={`form-check-label switch-custom ${textColor}`}
+              htmlFor="flexSwitchCheckDefault"
+            >
+              {theme === "theme-light" ? "Bright Mode" : "Dark Mode"}
+            </label>
+          </div>
+          <Menu isSwitchOn={isSwitchOn} />
+          <Burger isSwitchOn={isSwitchOn} />
         </div>
-        <Menu isSwitchOn={isSwitchOn} />
-        <Order isSwitchOn={isSwitchOn} />
-      </div>
-      </div>
     </>
   );
 };
