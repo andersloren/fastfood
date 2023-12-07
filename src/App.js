@@ -15,6 +15,10 @@ const App = () => {
   const [backgroundColor, setSwitchColor] = useState("background-light");
   const [textColor, setTextColor] = useState("text-dark");
 
+  const [isVisibleBurger, setIsVisibleBurger] = useState(false);
+  const [isVisiblePizza, setIsVisiblePizza] = useState(false);
+  const [isVisibleFries, setIsVisibleFries] = useState(false);
+
   const handleSwitchChange = () => {
     setIsSwitchOn(!isSwitchOn);
     if (!isSwitchOn) {
@@ -28,34 +32,54 @@ const App = () => {
     }
   };
 
+  const toggleBurgerVisibility = () => {
+    setIsVisibleBurger(!isVisibleBurger);
+  };
+
+  const togglePizzaVisibility = () => {
+    setIsVisiblePizza(!isVisiblePizza);
+  };
+
+  const toggleFriesVisibility = () => {
+    setIsVisibleFries(!isVisibleFries);
+  };
+
   return (
     <>
-        <div className={`App ${theme}`}>
-          <div
-            className={`form-check form-switch slider switch-custom ${backgroundColor}`}
+      <div className={`App ${theme}`}>
+        <div
+          className={`form-check form-switch slider switch-custom ${backgroundColor}`}
+        >
+          <input
+            className="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="flexSwitchCheckDefault"
+            checked={isSwitchOn}
+            onChange={handleSwitchChange}
+          />
+          <label
+            className={`form-check-label switch-custom ${textColor}`}
+            htmlFor="flexSwitchCheckDefault"
           >
-            <input
-              className="form-check-input"
-              type="checkbox"
-              role="switch"
-              id="flexSwitchCheckDefault"
-              checked={isSwitchOn}
-              onChange={handleSwitchChange}
-            />
-            <label
-              className={`form-check-label switch-custom ${textColor}`}
-              htmlFor="flexSwitchCheckDefault"
-            >
-              {theme === "theme-light" ? "Bright Mode" : "Dark Mode"}
-            </label>
-          </div>
-          <Menu isSwitchOn={isSwitchOn} />
-          <YourOrder isSwitchOn={isSwitchOn} />
-          <Burger />
-          <Pizza />
-          <Fries  />
-          <Total />
+            {theme === "theme-light" ? "Bright Mode" : "Dark Mode"}
+          </label>
         </div>
+        <Menu
+          isSwitchOn={isSwitchOn}
+          isVisibleBurger={isVisibleBurger}
+          toggleBurgerVisibility={toggleBurgerVisibility}
+          isVisiblePizza={isVisiblePizza}
+          togglePizzaVisibility={togglePizzaVisibility}
+          isVisibleFries={isVisibleFries}
+          toggleFriesVisibility={toggleFriesVisibility}
+        />
+        <YourOrder isSwitchOn={isSwitchOn} />
+        <Burger isVisibleBurger={isVisibleBurger} />
+        <Pizza isVisiblePizza={isVisiblePizza} />
+        <Fries isVisibleFries={isVisibleFries} />
+        <Total />
+      </div>
     </>
   );
 };

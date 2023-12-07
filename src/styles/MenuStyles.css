@@ -10,3 +10,11 @@
 .menu-title.dark {
     color: black;
 }
+
+.menu-row {
+    display: inline-block;
+  }
+
+  .menu-background-color {
+    background-color: white;
+}

@@ -47,6 +47,8 @@ const Pizza = (props) => {
   };
 
   return (
+    <>
+      {props.isVisiblePizza && (
     <div className="container">
       <div className="order-background-color order-list">
         <h3 className="mx-3 my-2">Pizza</h3>
@@ -81,9 +83,11 @@ const Pizza = (props) => {
           onClick={addButtonValue}
         >
           +
-        </button>
+          </button>
       </div>
-    </div>
+      </div>
+      )}
+    </>
   );
 };
 

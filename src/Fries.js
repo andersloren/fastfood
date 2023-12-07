@@ -47,6 +47,8 @@ const Fries = (props) => {
   };
 
   return (
+    <>
+      {props.isVisibleFries && (
     <div className="container">
       <div className="order-background-color order-list">
         <h3 className="mx-3 my-2">Fries</h3>
@@ -83,7 +85,9 @@ const Fries = (props) => {
           +
         </button>
       </div>
-    </div>
+      </div>
+      )}
+    </>
   );
 };
 

@@ -47,43 +47,47 @@ const Burger = (props) => {
   };
 
   return (
-    <div className="container">
-      <div className="order-background-color order-list">
-        <h3 className="mx-3 my-2">Burger</h3>
-        <button
-          type="button"
-          className="ml-5 order-button btn btn-danger"
-          onClick={subtractButtonValue}
-        >
-          -
-        </button>
-        {isEditing ? (
-          <input
-            type="number"
-            value={buttonValue}
-            onChange={handleInputChange}
-            onBlur={handleInputBlur}
-            onKeyDown={handleInputKeyDown}
-            autoFocus
-          />
-        ) : (
-          <button
-            className="order-button btn"
-            style={{ border: "1px solid rgb(100,100,100" }}
-            onClick={handleButtonClick}
-          >
-            {buttonValue}
-          </button>
-        )}
-        <button
-          type="button"
-          className="ml-5 order-button btn btn-success"
-          onClick={addButtonValue}
-        >
-          +
-        </button>
-      </div>
-    </div>
+    <>
+      {props.isVisibleBurger && (
+        <div className="container">
+          <div className="order-background-color order-list">
+            <h3 className="mx-3 my-2">Burger</h3>
+            <button
+              type="button"
+              className="ml-5 order-button btn btn-danger"
+              onClick={subtractButtonValue}
+            >
+              -
+            </button>
+            {isEditing ? (
+              <input
+                type="number"
+                value={buttonValue}
+                onChange={handleInputChange}
+                onBlur={handleInputBlur}
+                onKeyDown={handleInputKeyDown}
+                autoFocus
+              />
+            ) : (
+              <button
+                className="order-button btn"
+                style={{ border: "1px solid rgb(100,100,100" }}
+                onClick={handleButtonClick}
+              >
+                {buttonValue}
+              </button>
+            )}
+            <button
+              type="button"
+              className="ml-5 order-button btn btn-success"
+              onClick={addButtonValue}
+            >
+              +
+            </button>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
