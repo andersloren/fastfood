@@ -25,7 +25,7 @@ const App = () => {
 
   return (
     <div className={`App ${theme}`}>
-      <div className={`form-check form-switch switch-custom ${backgroundColor}`}>
+      <div className={`form-check form-switch slider switch-custom ${backgroundColor}`}>
         <input
           className="form-check-input"
           type="checkbox"
@@ -35,7 +35,7 @@ const App = () => {
           onChange={handleSwitchChange}
         />
         <label className={`form-check-label switch-custom ${textColor}`} for="flexSwitchCheckDefault">
-          {theme == "theme-light" ? "Dark" : "Bright"}
+          {theme == "theme-light" ? "Bright Mode" : "Dark Mode"}
         </label>
       </div>
       <Menu theme={theme}/>

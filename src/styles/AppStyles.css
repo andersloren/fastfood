@@ -14,6 +14,16 @@
 .switch-custom {
     outline: none;
     box-shadow: none;
+    font-weight: bold;
+}
+
+.form-switch .form-check-input {
+    background-color: #c3c3c3;
+}
+
+.form-switch .form-check-input:checked {
+    background-color: #4f4f4f; /* Darker gray for the knob when active */
+    border-color: #4f4f4f;
 }
 
 .switch-custom.background-dark {

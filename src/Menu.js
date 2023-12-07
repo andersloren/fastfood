@@ -27,11 +27,11 @@ const Menu = (props) => {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container mt-5">
       <div className={`container menu-title ${props.theme === 'theme-light' ? 'dark' : 'light'}`}>Fast Food Menu</div>
       <div className="row">
         {menu.map((dish, index) => (
-          <div className="card mb-4 col-md-3 m-2 p-3" key={index}>
+          <div className="card col-md-3 m-2 p-3" key={index}>
             <img
               className="card-img-top"
               src="./fast-food-dish-picture.png"
