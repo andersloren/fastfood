@@ -43,4 +43,12 @@
     color: rgb(255, 255, 255)
 }
 
+.form-switch .form-check-input {
+    background-color: #b3b3b3;
+    border-color: #cfcfcf;
+}
 
+.form-switch .form-check-input::checked {
+    background-color: #4f4f4f;
+    border-color: #cfcfcf;
+}
