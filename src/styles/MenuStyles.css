@@ -1,0 +1,13 @@
+
+.menu-title {
+    text-align: center;
+    font-size: 30px;
+}
+
+.menu-title.light {
+    color: rgb(255, 255, 255);
+}
+
+.menu-title.dark {
+    color: black;
+}

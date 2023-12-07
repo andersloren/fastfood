@@ -5,25 +5,40 @@ import "./styles/AppStyles.css";
 import Menu from "./Menu";
 
 const App = () => {
-  const [theme, setTheme] = useState("light-theme");
-  const [buttonColor, setButtonColor] = useState("dark");
+  const [theme, setTheme] = useState("theme-light");
+  const [isSwitchOn, setIsSwitchOn] = useState(false);
+  const [backgroundColor, setSwitchColor] = useState("background-light");
+  const [textColor, setTextColor] = useState("text-dark");
 
-  const toggleTheme = () => {
-    if (theme === "light-theme") {
-      setTheme("dark-theme");
-      setButtonColor("bright");
+  const handleSwitchChange = () => {
+    setIsSwitchOn(!isSwitchOn);
+    if (theme === "theme-light") {
+      setTheme("theme-dark");
+      setTextColor("text-light");
+      setSwitchColor("background-dark")
     } else {
-      setTheme("light-theme");
-      setButtonColor("dark");
+      setTheme("theme-light");
+      setTextColor("text-dark");
+      setSwitchColor("background-light")
     }
   };
 
   return (
     <div className={`App ${theme}`}>
-      <button className={`btn-custom ${buttonColor} m-2 mx-3`} onClick={toggleTheme}>
-        {theme == "light-theme" ? "Dark" : "Light"}
-      </button>
-      <Menu />
+      <div className={`form-check form-switch switch-custom ${backgroundColor}`}>
+        <input
+          className="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="flexSwitchCheckDefault"
+          checked={isSwitchOn}
+          onChange={handleSwitchChange}
+        />
+        <label className={`form-check-label switch-custom ${textColor}`} for="flexSwitchCheckDefault">
+          {theme == "theme-light" ? "Dark" : "Bright"}
+        </label>
+      </div>
+      <Menu theme={theme}/>
     </div>
   );
 };

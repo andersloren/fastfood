@@ -1,0 +1,36 @@
+.App {
+    min-height: 100vh;
+    min-width: 100vh;
+}
+
+.App.theme-dark {
+    background-color: rgb(34, 34, 34);
+}
+
+.App.theme-light {
+    background-color: rgb(255, 255, 255)
+}
+
+.switch-custom {
+    outline: none;
+    box-shadow: none;
+}
+
+.switch-custom.background-dark {
+    background-color: rgb(34, 34, 34);
+}
+
+.switch-custom.background-light {
+    background-color: rgb(255, 255, 255)
+}
+
+
+.switch-custom.text-dark {
+    color: rgb(200, 200, 200)
+}
+
+.switch-custom.text-light {
+    color: rgb(255, 255, 255)
+}
+
+
