@@ -33,7 +33,7 @@ const Pizza = (props) => {
                 +
               </button>
             </div>
-            <div>SEK {(props.pizzaPrice * props.pizzaQuantity).toFixed(2)}</div>
+            <div>SEK {(props.price * props.pizzaQuantity).toFixed(2)}</div>
           </div>
         </div>
       )}

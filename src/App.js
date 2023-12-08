@@ -8,6 +8,13 @@ import Pizza from "./Pizza";
 import Fries from "./Fries";
 import YourOrder from "./YourOrder";
 import Total from "./Total";
+import UseMenuItem from "./hooks/UseMenuItem";
+import {
+  burgerPrice,
+  pizzaPrice,
+  friesPrice,
+  calculateTotalPrice,
+} from "./utils/prices";
 
 const App = () => {
   const [isSwitchOn, setIsSwitchOn] = useState(false);
@@ -28,83 +35,83 @@ const App = () => {
     }
   };
 
-  const [isVisibleBurger, setIsVisibleBurger] = useState(false);
-  const [isVisiblePizza, setIsVisiblePizza] = useState(false);
-  const [isVisibleFries, setIsVisibleFries] = useState(false);
+  // const [isVisibleBurger, setIsVisibleBurger] = useState(false);
+  // const [isVisiblePizza, setIsVisiblePizza] = useState(false);
+  // const [isVisibleFries, setIsVisibleFries] = useState(false);
 
-  const toggleBurgerVisibility = () => {
-    setIsVisibleBurger(!isVisibleBurger);
-    setBurgerQuantity(0);
-  };
+  // const toggleBurgerVisibility = () => {
+  //   setIsVisibleBurger(!isVisibleBurger);
+  //   setBurgerQuantity(0);
+  // };
 
-  const togglePizzaVisibility = () => {
-    setIsVisiblePizza(!isVisiblePizza);
-    setPizzaQuantity(0);
-  };
+  // const togglePizzaVisibility = () => {
+  //   setIsVisiblePizza(!isVisiblePizza);
+  //   setPizzaQuantity(0);
+  // };
 
-  const toggleFriesVisibility = () => {
-    setIsVisibleFries(!isVisibleFries);
-    setFriesQuantity(0);
-  };
+  // const toggleFriesVisibility = () => {
+  //   setIsVisibleFries(!isVisibleFries);
+  //   setFriesQuantity(0);
+  // };
 
-  const [burgerQuantity, setBurgerQuantity] = useState(0);
-  const [pizzaQuantity, setPizzaQuantity] = useState(0);
-  const [friesQuantity, setFriesQuantity] = useState(0);
+  // const [burgerQuantity, setBurgerQuantity] = useState(0);
+  // const [pizzaQuantity, setPizzaQuantity] = useState(0);
+  // const [friesQuantity, setFriesQuantity] = useState(0);
 
-  const subtractBurgerQuantity = () => {
-    setBurgerQuantity((prevValue) => (prevValue > 0 ? prevValue - 1 : 0));
-  };
+  // const subtractBurgerQuantity = () => {
+  //   setBurgerQuantity((prevValue) => (prevValue > 0 ? prevValue - 1 : 0));
+  // };
 
-  const addBurgerQuantity = () => {
-    if (burgerQuantity >= 10) {
-      alert(
-        "For quantites over 10, please call the restaurant and our staff will help you!"
-      );
-      setBurgerQuantity(10);
-    } else {
-      setBurgerQuantity(burgerQuantity + 1);
-    }
-  };
+  // const addBurgerQuantity = () => {
+  //   if (burgerQuantity >= 10) {
+  //     alert(
+  //       "For quantites over 10, please call the restaurant and our staff will help you!"
+  //     );
+  //     setBurgerQuantity(10);
+  //   } else {
+  //     setBurgerQuantity(burgerQuantity + 1);
+  //   }
+  // };
 
-  const subtractPizzaQuantity = () => {
-    setPizzaQuantity((prevValue) => (prevValue > 0 ? prevValue - 1 : 0));
-  };
+  // const subtractPizzaQuantity = () => {
+  //   setPizzaQuantity((prevValue) => (prevValue > 0 ? prevValue - 1 : 0));
+  // };
 
-  const addPizzaQuantity = () => {
-    if (pizzaQuantity >= 10) {
-      alert(
-        "For quantites over 10, please call the restaurant and our staff will help you!"
-      );
-      setPizzaQuantity(10);
-    } else {
-      setPizzaQuantity(pizzaQuantity + 1);
-    }
-  };
+  // const addPizzaQuantity = () => {
+  //   if (pizzaQuantity >= 10) {
+  //     alert(
+  //       "For quantites over 10, please call the restaurant and our staff will help you!"
+  //     );
+  //     setPizzaQuantity(10);
+  //   } else {
+  //     setPizzaQuantity(pizzaQuantity + 1);
+  //   }
+  // };
 
-  const subtractFriesQuantity = () => {
-    setFriesQuantity((prevValue) => (prevValue > 0 ? prevValue - 1 : 0));
-  };
+  // const subtractFriesQuantity = () => {
+  //   setFriesQuantity((prevValue) => (prevValue > 0 ? prevValue - 1 : 0));
+  // };
 
-  const addFriesQuantity = () => {
-    if (friesQuantity >= 10) {
-      alert(
-        "For quantites over 10, please call the restaurant and our staff will help you!"
-      );
-      setFriesQuantity(10);
-    } else {
-      setFriesQuantity(friesQuantity + 1);
-    }
-  };
+  // const addFriesQuantity = () => {
+  //   if (friesQuantity >= 10) {
+  //     alert(
+  //       "For quantites over 10, please call the restaurant and our staff will help you!"
+  //     );
+  //     setFriesQuantity(10);
+  //   } else {
+  //     setFriesQuantity(friesQuantity + 1);
+  //   }
+  // };
 
-  const burgerPrice = 79.99;
-  const pizzaPrice = 99.99;
-  const friesPrice = 59.99;
+  const burger = UseMenuItem();
+  const pizza = UseMenuItem();
+  const fries = UseMenuItem();
 
-  const totalPrice = () => (
-    burgerPrice*burgerQuantity + pizzaPrice*pizzaQuantity + friesPrice*friesQuantity
+  const totalPrice = calculateTotalPrice(
+    burger.quantity,
+    pizza.quantity,
+    fries.quantity
   );
-
-
 
   return (
     <>
@@ -129,39 +136,42 @@ const App = () => {
         </div>
         <Menu
           isSwitchOn={isSwitchOn}
+          burger={burger}
+          pizza={pizza}
+          fries={fries}
           burgerPrice={burgerPrice}
-          isVisibleBurger={isVisibleBurger}
-          toggleBurgerVisibility={toggleBurgerVisibility}
           pizzaPrice={pizzaPrice}
-          isVisiblePizza={isVisiblePizza}
-          togglePizzaVisibility={togglePizzaVisibility}
           friesPrice={friesPrice}
-          isVisibleFries={isVisibleFries}
-          toggleFriesVisibility={toggleFriesVisibility}
+          isVisibleBurger={burger.isVisible}
+          toggleBurgerVisibility={burger.toggleVisibility}
+          isVisiblePizza={pizza.isVisible}
+          togglePizzaVisibility={pizza.toggleVisibility}
+          isVisibleFries={fries.isVisible}
+          toggleFriesVisibility={fries.toggleVisibility}
         />
         <YourOrder isSwitchOn={isSwitchOn} />
         <Burger
-          burgerPrice={burgerPrice}
-          isVisibleBurger={isVisibleBurger}
-          subtractBurgerQuantity={subtractBurgerQuantity}
-          addBurgerQuantity={addBurgerQuantity}
-          burgerQuantity={burgerQuantity}
+          price={burgerPrice}
+          isVisibleBurger={burger.isVisible}
+          subtractBurgerQuantity={burger.subtractQuantity}
+          addBurgerQuantity={burger.addQuantity}
+          burgerQuantity={burger.quantity}
         />
         <Pizza
-          pizzaPrice={pizzaPrice}
-          isVisiblePizza={isVisiblePizza}
-          subtractPizzaQuantity={subtractPizzaQuantity}
-          addPizzaQuantity={addPizzaQuantity}
-          pizzaQuantity={pizzaQuantity}
+          price={pizzaPrice}
+          isVisiblePizza={pizza.isVisible}
+          subtractPizzaQuantity={pizza.subtractQuantity}
+          addPizzaQuantity={pizza.addQuantity}
+          pizzaQuantity={pizza.quantity}
         />
         <Fries
-          friesPrice={friesPrice}
-          isVisibleFries={isVisibleFries}
-          subtractFriesQuantity={subtractFriesQuantity}
-          addFriesQuantity={addFriesQuantity}
-          friesQuantity={friesQuantity}
+          price={friesPrice}
+          isVisibleFries={fries.isVisible}
+          subtractFriesQuantity={fries.subtractQuantity}
+          addFriesQuantity={fries.addQuantity}
+          friesQuantity={fries.quantity}
         />
-        <Total totalPrice={totalPrice()}/>
+        <Total totalPrice={totalPrice} />
       </div>
     </>
   );

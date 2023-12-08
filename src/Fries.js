@@ -33,7 +33,7 @@ const Fries = (props) => {
                 +
               </button>
             </div>
-            <div>SEK {(props.friesPrice * props.friesQuantity).toFixed(2)}</div>
+            <div>SEK {(props.price * props.friesQuantity).toFixed(2)}</div>
           </div>
         </div>
       )}
