@@ -21,8 +21,7 @@ const UseMenuItem = () => {
   };
 
   return {
-    isVisible,
-    quantity,
+    
     toggleVisibility,
     addQuantity,
     subtractQuantity,

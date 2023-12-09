@@ -2,7 +2,7 @@ import React from "react";
 
 import "./styles/MenuStyles.css";
 
-const Menu = ( {isSwitchOn, burger, pizza, fries, burgerPrice, pizzaPrice, friesPrice, } ) => {
+const Menu = ( {isSwitchOn, burger, pizza, fries, burgerPrice, pizzaPrice, friesPrice } ) => {
 
   // const { isVisible, quantity, toggleVisibility, addQuantity, subtractQuantity } = UseMenuItem();
 
@@ -13,7 +13,7 @@ const Menu = ( {isSwitchOn, burger, pizza, fries, burgerPrice, pizzaPrice, fries
         Fast Food Menu
       </h2>
       <div className="menu-row m-2 p-3 menu-background-color">
-        <img className="card-img-top" src="./fast-food-dish-picture.png" />
+        <img className="" src="./fast-food-dish-picture.png" />
         <h5 className="card-title my-1">Burger</h5>
         <div className="card-description my-1">
           A delicious burger with all the fixings
@@ -24,7 +24,7 @@ const Menu = ( {isSwitchOn, burger, pizza, fries, burgerPrice, pizzaPrice, fries
         </button>
       </div>
       <div className="menu-row m-2 p-3 menu-background-color">
-        <img className="card-img-top" src="./fast-food-dish-picture.png" />
+        <img className="" src="./fast-food-dish-picture.png" />
         <h5 className="card-title my-1">Pizza</h5>
         <div className="card-description my-1">
           Classic pizza with your favorite toppings
@@ -35,7 +35,7 @@ const Menu = ( {isSwitchOn, burger, pizza, fries, burgerPrice, pizzaPrice, fries
         </button>
       </div>
       <div className="menu-row m-2 p-3 menu-background-color">
-        <img className="card-img-top" src="./fast-food-dish-picture.png" />
+        <img className="" src="./fast-food-dish-picture.png" />
         <h5 className="card-title my-1">Fries</h5>
         <div className="card-description my-1">
           Crispy golden fries served hot and fresh
