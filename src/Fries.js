@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./styles/OrderStyles.css";
 
-const Fries = (props) => {
-
+const Fries = ({ isVisible, quantity, add, subtract, price }) => {
   return (
     <>
-      {props.isVisibleFries && (
+      {isVisible && (
         <div className="container">
           <div className="order-background-color order-list">
             <div>
@@ -14,7 +13,7 @@ const Fries = (props) => {
               <button
                 type="button"
                 className="ml-5 order-button btn btn-danger"
-                onClick={props.subtractFriesQuantity}
+                onClick={subtract}
               >
                 -
               </button>
@@ -23,17 +22,17 @@ const Fries = (props) => {
                 className="order-button btn"
                 style={{ border: "1px solid rgb(100,100,100" }}
               >
-                {props.friesQuantity}
+                {quantity}
               </button>
               <button
                 type="button"
                 className="ml-5 order-button btn btn-success"
-                onClick={props.addFriesQuantity}
+                onClick={add}
               >
                 +
               </button>
             </div>
-            <div>SEK {(props.price * props.friesQuantity).toFixed(2)}</div>
+            <div>SEK {(price * quantity).toFixed(2)}</div>
           </div>
         </div>
       )}

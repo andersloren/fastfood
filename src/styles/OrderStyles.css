@@ -17,8 +17,8 @@
 }
 
 .order-list {
-    border-radius: 0.5rem; /* Adjust the radius to your preference */
-    overflow: hidden; /* Ensures the inner elements don't overflow the rounded corners */
+    border-radius: 0.5rem;
+    overflow: hidden; 
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -26,17 +26,12 @@
   
   .order-list th,
   .order-list td {
-    border-radius: 0; /* Resets border-radius for table cells, if necessary */
+    border-radius: 0;
   }
   
-  /* Bootstrap 5 uses .table>:not(:last-child) th to set borders. This style removes the bottom border of the thead element, so it does not overlap the rounded corners of the table. */
   .order-list thead th {
     border-bottom: 0;
   }
-
-  /* .order-row {
-    display: inline-block;
-  } */
 
 .order-button {
     width: 50px;

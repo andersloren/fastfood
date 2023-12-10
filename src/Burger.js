@@ -1,11 +1,10 @@
 import React from "react";
 
 import "./styles/OrderStyles.css";
-import UseMenuItem from "./hooks/UseMenuItem";
 
-const Burger = (props) => {
-
-  const { isVisible, quantity, addQuantity, subtractQuantity } = UseMenuItem();
+const Burger = ({ isVisible, quantity, add, subtract, price }) => {
+  console.log("add function", add);
+  console.log("price", price, "quantity", quantity);
 
   return (
     <>
@@ -17,7 +16,7 @@ const Burger = (props) => {
               <button
                 type="button"
                 className="ml-5 order-button btn btn-danger"
-                onClick={subtractQuantity}
+                onClick={subtract}
               >
                 -
               </button>
@@ -25,17 +24,17 @@ const Burger = (props) => {
                 className="order-button btn"
                 style={{ border: "1px solid rgb(100,100,100" }}
               >
-                {props.burgerQuantity}
+                {quantity}
               </button>
               <button
                 type="button"
                 className="ml-5 order-button btn btn-success"
-                onClick={addQuantity}
+                onClick={add}
               >
                 +
               </button>
             </div>
-            <div>SEK {(props.price * quantity).toFixed(2)}</div>
+            <div>SEK {price * quantity}</div>
           </div>
         </div>
       )}
